@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="714,2256" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="714,2970" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -48,13 +48,13 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Read customers from file and add to CS website" sap:VirtualizedContainerService.HintSize="694,2156" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Read customers from file and add to CS website" sap:VirtualizedContainerService.HintSize="694,2910" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try the whole process" sap:VirtualizedContainerService.HintSize="652,2064" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try the whole process" sap:VirtualizedContainerService.HintSize="652,2818" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -62,11 +62,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="The whole process" sap:VirtualizedContainerService.HintSize="614,1837" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="The whole process" sap:VirtualizedContainerService.HintSize="614,2591" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="CustomersFile" />
             <Variable x:TypeArguments="sd:DataTable" Name="CustomersToSave" />
             <Variable x:TypeArguments="x:String" Name="FirstName" />
+            <Variable x:TypeArguments="x:Int32" Name="BirthYear" />
+            <Variable x:TypeArguments="x:String" Name="LastName" />
+            <Variable x:TypeArguments="x:Int16" Name="Age" />
+            <Variable x:TypeArguments="x:String" Name="EmailAddress" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -99,26 +103,26 @@
             <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Birth Year" DataTable="[CustomersToSave]" DefaultValue="N/A" DisplayName="Add &quot;Birth Year&quot;Column" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="5" />
             <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Result" DataTable="[CustomersToSave]" DefaultValue="N/A" DisplayName="Add &quot;Result&quot; Column" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" MaxLength="10" />
           </Sequence>
-          <Sequence DisplayName="Add customers to website" sap:VirtualizedContainerService.HintSize="572,1173" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Add customers to website" sap:VirtualizedContainerService.HintSize="572,1803" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[CustomersToSave]" DisplayName="Add all customers to website" sap:VirtualizedContainerService.HintSize="530,1081" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[CustomersToSave]" DisplayName="Add all customers to website" sap:VirtualizedContainerService.HintSize="530,1711" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Customer" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="480,933" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence sap:VirtualizedContainerService.HintSize="480,1563" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try to add 1 customer" sap:VirtualizedContainerService.HintSize="438,841" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch DisplayName="Try to add 1 customer" sap:VirtualizedContainerService.HintSize="438,1471" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -126,22 +130,27 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <TryCatch.Try>
-                        <Sequence DisplayName="Add 1 customer to website" sap:VirtualizedContainerService.HintSize="376,614" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:Int32" Name="BirthYear" />
-                          </Sequence.Variables>
+                        <Sequence DisplayName="Add 1 customer to website" sap:VirtualizedContainerService.HintSize="376,1244" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int16">[Age]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int16">[CType(Customer.Item("Age"),System.Int16)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
                           <Assign DisplayName="Calculate the customer's birth year" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[BirthYear]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[Now.Year-CType(Customer.Item("Age"),System.Int16)]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32">[Now.Year-Age]</InArgument>
                             </Assign.Value>
                           </Assign>
                           <Assign DisplayName="Persist birth year in output table" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -152,12 +161,51 @@
                               <InArgument x:TypeArguments="x:Object">[BirthYear]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="First Name" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[Customer]">
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="First Name" DisplayName="Get Row Item First Name" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[Customer]">
                             <ui:GetRowItem.Value>
                               <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
                             </ui:GetRowItem.Value>
                           </ui:GetRowItem>
-                          <ui:LogMessage DisplayName="Log who we're saving" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Attempting to save &quot;+Customer.Item(&quot;First Name&quot;).ToString+&quot;, &quot;+Customer.Item(&quot;Last Name&quot;).ToString+&quot;, &quot;+Customer.Item(&quot;Age&quot;).ToString+&quot;, &quot;+Customer.Item(&quot;Email Address&quot;).ToString+&quot;, &quot;+Customer.Item(&quot;Birth Year&quot;).ToString]">
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Last Name" DisplayName="Get Row Item Last Name" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[Customer]">
+                            <ui:GetRowItem.Value>
+                              <OutArgument x:TypeArguments="x:String">[LastName]</OutArgument>
+                            </ui:GetRowItem.Value>
+                          </ui:GetRowItem>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Age" DisplayName="Get Row Item Age" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[Customer]">
+                                  <ui:GetRowItem.Value>
+                                    <OutArgument x:TypeArguments="x:Int16">[Age]</OutArgument>
+                                  </ui:GetRowItem.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:GetRowItem>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Email Address" DisplayName="Get Row Item Email Address" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[Customer]">
+                            <ui:GetRowItem.Value>
+                              <OutArgument x:TypeArguments="x:String">[EmailAddress]</OutArgument>
+                            </ui:GetRowItem.Value>
+                          </ui:GetRowItem>
+                          <ui:LogMessage DisplayName="Log who we're saving" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Attempting to save &quot;+FirstName+&quot;, &quot;+LastName+&quot;, &quot;+Age.ToString+&quot;, &quot;+EmailAddress+&quot;, &quot;+BirthYear.ToString]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -168,11 +216,27 @@
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Save Customer To Website" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SaveCustomerToWebsite.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="firstName">[FirstName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="lastName">[Customer.Item("Last Name").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="birthYear">[CType(Customer.Item("Birth Year").ToString,System.Int32)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int16" x:Key="age">[CType(Customer.Item("Age").ToString,System.Int16)]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="lastName">[LastName]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="birthYear">[BirthYear]</InArgument>
+                              <InArgument x:TypeArguments="x:Int16" x:Key="age">[Age]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
+                          <Assign DisplayName="Persist result to output" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[Customer.Item("Result")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">["Success"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log who we're saving" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[Customer.Item(&quot;Result&quot;).ToString]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
@@ -187,6 +251,22 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                             </ActivityAction.Argument>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Persist result to output" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[Customer.Item("Result")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">["Failed"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:LogMessage DisplayName="Log the error" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Error while saving: &quot;+exception.ToString]" />
+                            </Sequence>
                           </ActivityAction>
                         </Catch>
                       </TryCatch.Catches>
@@ -202,12 +282,13 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
           </Sequence>
-          <Sequence DisplayName="Write results file" sap:VirtualizedContainerService.HintSize="572,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Write results file" sap:VirtualizedContainerService.HintSize="572,207" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:WriteRange AddHeaders="True" DataTable="[CustomersToSave]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Customers" StartingCell="A1" WorkbookPath="[CustomersFile]" />
           </Sequence>
         </Sequence>
       </TryCatch.Try>

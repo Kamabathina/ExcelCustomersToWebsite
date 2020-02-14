@@ -5,7 +5,7 @@
     <x:Property Name="birthYear" Type="InArgument(x:Int32)" />
     <x:Property Name="age" Type="InArgument(x:Int16)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>396,283</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>396,243</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
   <TextExpression.NamespacesForImplementation>
